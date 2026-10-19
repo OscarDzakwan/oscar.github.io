@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oscar Dzakwan | Petinju</title>
+<style>
+  :root {
+    --bg: #0e0e10;
+    --panel: #18181c;
+    --red: #d62828;
+    --gold: #f2b705;
+    --text: #f1f1f1;
+    --muted: #9a9aa3;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 14px 6vw;
+    background: rgba(14,14,16,.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid #26262c;
+  }
+  nav .logo { font-weight: 800; letter-spacing: 2px; color: var(--red); }
+  nav ul { display: flex; gap: 22px; list-style: none; }
+  nav a { color: var(--text); text-decoration: none; font-size: .9rem; }
+  nav a:hover { color: var(--gold); }
+
+  /* HERO */
+  .hero {
+    min-height: 88vh;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    text-align: center; padding: 0 6vw;
+    background:
+      radial-gradient(circle at 50% 30%, rgba(214,40,40,.35), transparent 60%),
+      var(--bg);
+  }
+  .hero .tag {
+    color: var(--gold); letter-spacing: 6px; font-size: .85rem; margin-bottom: 14px;
+  }
+  .hero h1 {
+    font-size: clamp(2.8rem, 10vw, 6.5rem);
+    line-height: 1; font-weight: 900; text-transform: uppercase;
+  }
+  .hero h1 span { color: var(--red); }
+  .hero p { margin-top: 18px; color: var(--muted); max-width: 560px; }
+  .btn {
+    display: inline-block; margin-top: 28px; padding: 13px 30px;
+    background: var(--red); color: #fff; text-decoration: none;
+    font-weight: 700; border-radius: 4px; transition: .2s;
+  }
+  .btn:hover { background: var(--gold); color: #000; }
+
+  /* SECTION */
+  section { padding: 80px 6vw; max-width: 1050px; margin: auto; }
+  h2 {
+    font-size: 1.9rem; text-transform: uppercase; margin-bottom: 28px;
+    border-left: 5px solid var(--red); padding-left: 14px;
+  }
+
+  /* PROFIL */
+  .profil { display: grid; grid-template-columns: 1fr 1.4fr; gap: 36px; align-items: start; }
+  .foto {
+    aspect-ratio: 3/4; background: var(--panel);
+    border: 2px dashed #34343c; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--muted); text-align: center; padding: 16px; font-size: .9rem;
+    overflow: hidden;
+  }
+  .foto img { width: 100%; height: 100%; object-fit: cover; }
+  table { width: 100%; border-collapse: collapse; margin-top: 18px; }
+  td { padding: 10px 0; border-bottom: 1px solid #26262c; }
+  td:first-child { color: var(--muted); width: 38%; }
+
+  /* STATISTIK */
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; }
+  .stat {
+    background: var(--panel); border-radius: 8px; padding: 26px 16px; text-align: center;
+    border-top: 3px solid var(--red);
+  }
+  .stat b { display: block; font-size: 2.4rem; color: var(--gold); }
+  .stat small { color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+
+  /* TIMELINE */
+  .timeline { border-left: 2px solid #2c2c33; padding-left: 26px; }
+  .item { position: relative; margin-bottom: 30px; }
+  .item::before {
+    content: ""; position: absolute; left: -34px; top: 6px;
+    width: 14px; height: 14px; background: var(--red); border-radius: 50%;
+    border: 3px solid var(--bg);
+  }
+  .item .year { color: var(--gold); font-weight: 700; }
+  .item h3 { margin: 2px 0 4px; }
+  .item p { color: var(--muted); }
+
+  /* QUOTE */
+  blockquote {
+    background: var(--panel); padding: 30px; border-radius: 8px;
+    border-left: 5px solid var(--gold); font-size: 1.2rem; font-style: italic;
+  }
+  blockquote cite { display: block; margin-top: 12px; font-size: .9rem; color: var(--muted); font-style: normal; }
+
+  footer { text-align: center; padding: 34px 6vw; color: var(--muted); border-top: 1px solid #26262c; font-size: .85rem; }
+
+  @media (max-width: 720px) {
+    .profil { grid-template-columns: 1fr; }
+    nav ul { gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">OSCAR D.</div>
+  <ul>
+    <li><a href="#profil">Profil</a></li>
+    <li><a href="#statistik">Statistik</a></li>
+    <li><a href="#karier">Karier</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="tag">PETINJU PROFESIONAL</div>
+  <h1>Oscar <span>Dzakwan</span></h1>
+  <p>ISI: satu kalimat singkat tentang Oscar, misalnya julukan atau kelas tinjunya.</p>
+  <a href="#profil" class="btn">Kenali Lebih Dekat</a>
+</header>
+
+<section id="profil">
+  <h2>Profil</h2>
+  <div class="profil">
+    <div class="foto">
+        <img src="Gemini_Generated_Image_bdr1zbbdr1zbbdr1.jpg"
+      <!-- Ganti dengan: <img src="oscar.jpg" alt="Oscar Dzakwan"> -->
+      ISI: letakkan foto Oscar di sini
+    </div>
+    <div>
+      <p>ISI: paragraf singkat tentang siapa Oscar Dzakwan, asalnya, dan bagaimana ia mulai berlatih tinju.</p>
+      <table>
+        <tr><td>Nama Lengkap</td><td>Oscar Dzakwan</td></tr>
+        <tr><td>Julukan</td><td>ISI</td></tr>
+        <tr><td>Tempat, Tanggal Lahir</td><td>ISI</td></tr>
+        <tr><td>Kebangsaan</td><td>ISI</td></tr>
+        <tr><td>Kelas</td><td>ISI</td></tr>
+        <tr><td>Tinggi Badan</td><td>ISI</td></tr>
+        <tr><td>Stance</td><td>ISI (Orthodox / Southpaw)</td></tr>
+        <tr><td>Sasana / Pelatih</td><td>ISI</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="statistik">
+  <h2>Rekor Tarung</h2>
+  <div class="stats">
+    <div class="stat"><b id="total">0</b><small>Total Laga</small></div>
+    <div class="stat"><b id="menang">0</b><small>Menang</small></div>
+    <div class="stat"><b id="ko">0</b><small>Menang KO</small></div>
+    <div class="stat"><b id="kalah">0</b><small>Kalah</small></div>
+    <div class="stat"><b id="seri">0</b><small>Seri</small></div>
+  </div>
+</section>
+
+<section id="karier">
+  <h2>Perjalanan Karier</h2>
+  <div class="timeline">
+    <div class="item">
+      <div class="year">ISI: Tahun</div>
+      <h3>Awal Berlatih Tinju</h3>
+      <p>ISI: ceritakan awal mula Oscar mengenal tinju.</p>
+    </div>
+    <div class="item">
+      <div class="year">ISI: Tahun</div>
+      <h3>Debut Profesional</h3>
+      <p>ISI: lawan, lokasi, dan hasil laga debut.</p>
+    </div>
+    <div class="item">
+      <div class="year">ISI: Tahun</div>
+      <h3>Pencapaian Penting</h3>
+      <p>ISI: gelar, kejuaraan, atau pertarungan yang paling berkesan.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Kutipan</h2>
+  <blockquote>
+    "ISI: kutipan asli dari Oscar, kalau ada."
+    <cite>- Oscar Dzakwan</cite>
+  </blockquote>
+</section>
+
+<footer>
+  &copy; <span id="tahun"></span> Profil Oscar Dzakwan. Dibuat untuk tugas/pembelajaran.
+</footer>
+
+<script>
+  // Ubah angka rekor di sini
+  const rekor = { total: 0, menang: 0, ko: 0, kalah: 0, seri: 0 };
+
+  // Animasi hitung angka
+  Object.keys(rekor).forEach(id => {
+    const el = document.getElementById(id);
+    const target = rekor[id];
+    let n = 0;
+    const step = Math.max(1, Math.ceil(target / 40));
+    const t = setInterval(() => {
+      n = Math.min(target, n + step);
+      el.textContent = n;
+      if (n >= target) clearInterval(t);
+    }, 30);
+  });
+
+  document.getElementById("tahun").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
